@@ -38,7 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
-    'music'
+    'app_api.apps.AppApiConfig'
 ]
 
 MIDDLEWARE = [
@@ -75,6 +75,16 @@ WSGI_APPLICATION = 'api.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'meal_api_db',
+#         'USER': 'meal_admin ',
+#         'PASSWORD': '12345678',
+#         'HOST': "127.0.0.1",
+#         'PORT': '5432',
+#     }
+# }
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',

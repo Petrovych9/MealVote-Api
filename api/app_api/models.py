@@ -25,3 +25,11 @@ class Employee(models.Model):
 
     def __str__(self):
         return self.name
+
+
+class Vote(models.Model):
+    employee = models.ForeignKey(Employee, on_delete=models.CASCADE)
+    menu = models.ForeignKey(Menu, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return f"{self.employee.name}'s vote for {self.menu.restaurant.name}'s menu on {self.menu.date}"

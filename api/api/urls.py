@@ -22,6 +22,7 @@ from app_api.views import RestaurantAPIView
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api-auth/', include('rest_framework.urls')),
-    path('api/1/restaurant-list', RestaurantAPIView.as_view())
+    path('api/1/restaurant-list/', RestaurantAPIView.as_view()),
+    path('api/1/restaurant-list/<int:pk>', RestaurantAPIView.as_view())
 
 ]

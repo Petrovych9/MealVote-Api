@@ -4,13 +4,6 @@
 
 MealVote-Api is a Django project that provides various functionalities related to restaurant management. This README guide will walk you through the steps required to set up and run the system locally.
 
-## Prerequisites
-
-Before you begin, ensure you have met the following requirements:
-
-- **Python**: MealVote-Api requires Python [insert version] to be installed on your system.
-- **Django**: Make sure you have Django [insert version] installed.
-- **Additional Dependencies**: Install additional project dependencies by running `pip install -r requirements.txt` from the project directory.
 
 ## Installation
 
@@ -49,7 +42,7 @@ Follow these steps to set up and run MealVote-Api:
 
 Once the server is running, you can access the MealVote-Api using your web browser or API client. Here are some of the available endpoints and functionalities:
 
-- **Authentication**: MealVote-Api provides authentication using [insert authentication method, e.g., token-based authentication]. You can obtain a token by sending a POST request to `/api/1/token/`. Use the obtained token for authentication in subsequent requests.
+- **Authentication**: MealVote-Api provides authentication using JWT token. You can obtain a token by sending a POST request to `/api/1/token/`. Use the obtained token for authentication in subsequent requests.
 
 
 - **Creating Restaurant**: To create a new restaurant, send a POST request to `/api/1/restaurants/`.
@@ -77,3 +70,8 @@ To obtain an authentication token, you can send a POST as below:
 
 ![img.png](image/img.png)
 ![img.png](image/img2.png)
+
+
+### Database
+
+MealVote-Api uses the SQLite3 database by default for local development. 

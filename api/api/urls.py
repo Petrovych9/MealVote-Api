@@ -16,13 +16,21 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from rest_framework import routers
 
-from app_api.views import RestaurantAPIView
+from app_api.views import RestaurantViewSet, EmployeeViewSet, MenuViewSet, TodaysMenusView
+
+
+router = routers.SimpleRouter()
+router.register(r'restaurants', RestaurantViewSet)
+router.register(r'employee', EmployeeViewSet)
+router.register(r'menu', MenuViewSet)
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api-auth/', include('rest_framework.urls')),
-    path('api/1/restaurant-list/', RestaurantAPIView.as_view()),
-    path('api/1/restaurant-list/<int:pk>', RestaurantAPIView.as_view())
-
+    path('api/1/', include(router.urls)),
+    path('api/1/restaurants/menus/today/',
+         TodaysMenusView.as_view(), name='all_current_day_menu'),
 ]

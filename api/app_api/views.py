@@ -42,7 +42,7 @@ class MenuViewSet(viewsets.ModelViewSet):
     serializer_class = MenuSerializer
 
 
-class TodaysMenusView(generics.ListAPIView):
+class TodayMenusView(generics.ListAPIView):
     """
         API endpoint that lists menus available for today.
 

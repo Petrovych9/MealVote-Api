@@ -14,9 +14,18 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='Vote',
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('employee', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='app_api.employee')),
-                ('menu', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='app_api.menu')),
+                ('id', models.BigAutoField(auto_created=True,
+                                           primary_key=True,
+                                           serialize=False,
+                                           verbose_name='ID')),
+                ('employee',
+                 models.ForeignKey(
+                     on_delete=django.db.models.deletion.CASCADE,
+                     to='app_api.employee')),
+                ('menu',
+                 models.ForeignKey(
+                     on_delete=django.db.models.deletion.CASCADE,
+                     to='app_api.menu')),
             ],
         ),
     ]

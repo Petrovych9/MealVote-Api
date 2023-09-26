@@ -15,7 +15,10 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='Employee',
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
+                ('id', models.BigAutoField(auto_created=True,
+                                           primary_key=True,
+                                           serialize=False,
+                                           verbose_name='ID')),
                 ('name', models.CharField(max_length=255)),
                 ('email', models.EmailField(max_length=254, unique=True)),
             ],
@@ -23,7 +26,10 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='Restaurant',
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
+                ('id', models.BigAutoField(auto_created=True,
+                                           primary_key=True,
+                                           serialize=False,
+                                           verbose_name='ID')),
                 ('name', models.CharField(max_length=255)),
                 ('address', models.TextField()),
             ],
@@ -31,10 +37,15 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='Menu',
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
+                ('id', models.BigAutoField(auto_created=True,
+                                           primary_key=True,
+                                           serialize=False,
+                                           verbose_name='ID')),
                 ('date', models.DateField()),
                 ('items', models.JSONField()),
-                ('restaurant', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='app_api.restaurant')),
+                ('restaurant',
+                 models.ForeignKey(on_delete=django.db.models.deletion.CASCADE,
+                                   to='app_api.restaurant')),
             ],
         ),
     ]

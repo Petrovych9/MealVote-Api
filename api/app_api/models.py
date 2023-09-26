@@ -7,7 +7,8 @@ class Restaurant(models.Model):
         Represents a restaurant.
 
         Fields:
-        - `name` (CharField): The name of the restaurant (maximum length: 255 characters).
+        - `name` (CharField): The name of the restaurant
+                        (maximum length: 255 characters).
         - `address` (TextField): The address of the restaurant.
 
         Methods:
@@ -25,9 +26,11 @@ class Menu(models.Model):
        Represents a menu for a specific restaurant on a particular date.
 
        Fields:
-       - `restaurant` (ForeignKey to Restaurant): The restaurant to which this menu belongs.
+       - `restaurant` (ForeignKey to Restaurant):
+                                     The restaurant to which this menu belongs.
        - `date` (DateField): The date on which the menu is available.
-       - `items` (JSONField): A field for storing structured data related to menu items.
+       - `items` (JSONField):
+                    A field for storing structured data related to menu items.
 
        Methods:
        - `__str__()`: Returns a string representation of the menu.
@@ -45,8 +48,10 @@ class Employee(models.Model):
        Represents an employee.
 
        Fields:
-       - `name` (CharField): The name of the employee (maximum length: 255 characters).
-       - `email` (EmailField): The email address of the employee (must be unique).
+       - `name` (CharField):
+                    The name of the employee (maximum length: 255 characters).
+       - `email` (EmailField):
+                            The email address of the employee (must be unique).
 
        Methods:
        - `__str__()`: Returns the name of the employee as a string.
@@ -73,4 +78,5 @@ class Vote(models.Model):
     menu = models.ForeignKey(Menu, on_delete=models.CASCADE)
 
     def __str__(self):
-        return f"{self.employee.name}'s vote for {self.menu.restaurant.name}'s menu on {self.menu.date}"
+        return f"{self.employee.name}'s vote for " \
+               f"{self.menu.restaurant.name}'s menu on {self.menu.date}"
